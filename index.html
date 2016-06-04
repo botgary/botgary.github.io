@@ -4,6 +4,15 @@
 
 <head>
 
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="http://botgary.github.io" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Bot Gary!" />
+    <meta property="og:description"   content="A chatbot you always wanted to have." />
+    <meta property="og:image"         content="http://botgary.github.io/static/img/profile.jpg" />
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +46,30 @@
 
 <body id="page-top">
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1041855379239323";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+<script>
+var newwindow;
+function poptastic(url)
+{
+    newwindow=window.open(url,'name','height=400,width=400');
+    if (window.focus) {newwindow.focus()}
+}
+
+
+</script>
+
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -50,15 +83,15 @@
                 </button>
 		
                 <a class="navbar-brand page-scroll" href="#page-top"><img src="static/img/profile1.png" width="12%"/></a>
-            </div>
 
+            </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
-		    <li>
+		            <li>
                         <a class="page-scroll" href="#experience">Experience</a>
                     </li>
                     <li>
@@ -77,6 +110,9 @@
                 <h1>Say 'Hi' to Bot Gary!</h1>
                 <hr>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <!--hr>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FBot-Gary-570917419736964%2F&width=200&layout=button_count&action=like&show_faces=true&share=true&height=46&appId=1041855379239323" width="200" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe-->
+
             </div>
         </div>
     </header>
@@ -85,7 +121,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"><img src="static/img/profile.jpg" width="20%" height="20%"/><br/><br/><a target="_blank" href="https://www.facebook.com/Bot-Gary-570917419736964/" class="page-scroll btn btn-default btn-xl sr-button">View Gary on facebook</a></i>
+                    <img src="static/img/profile.jpg" width="20%" height="20%"/><br/><br/><a target="_blank" href="https://www.facebook.com/Bot-Gary-570917419736964/" class="page-scroll btn btn-default btn-xl sr-button">View Gary on facebook</a>
 		     <br/><br/>
 
 		    <h2 class="section-heading">A chat bot you always wanted to have!</h2>
@@ -171,17 +207,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
     <section id="contact">
         <div class="container">
+        
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
@@ -212,7 +240,44 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="static/js/creative.js"></script>
+    <script>
+        $(function(){
+    $(window).resize(function(){
+        placeFooter();
+    });
+    placeFooter();
+    // hide it before it's positioned
+    $('#footer').css('display','inline');
+});
 
+function placeFooter() {    
+    var windHeight = $(window).height();
+    var windWidht = $(window).width();
+    var footerWidth = $('#footer').width();
+    var footerHeight = $('#footer').height();
+    var offsetHeight = parseInt(windHeight) - parseInt(footerHeight)/2;
+    var offsetWidth = (parseInt(windWidht) - (330*parseInt(footerWidth))/500);
+    //var offsetWidth = (parseInt(windWidht) - parseInt(footerWidth));
+    $('#footer').css('top',offsetHeight);
+    $('#footer').css('left',offsetWidth);
+}
+    </script>
+<div class="container" id='footer' style='position: fixed;'>
+<!--table>
+<tr>
+<td>
+<a href="javascript:poptastic('http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbotgary.github.io');">
+<img src="static/img/facebook-like-button.png" height="30%" width="35%"/></a>
+</td>
+<td>
+<a href="javascript:poptastic('http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbotgary.github.io');">
+<img src="static/img/facebook-share-button.png" height="50%" width="55%"/></a>
+</td>
+</tr>
+</table-->
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FBot-Gary-570917419736964%2F&width=200&layout=button_count&action=like&show_faces=true&share=true&height=46&appId=1041855379239323" width="200" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+</div>
 </body>
 
 </html>
